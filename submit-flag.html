@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Submit Flag — DFIR</title>
+<link rel="icon" href="assets/logo.svg" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div data-partial="nav"></div>
+
+<section class="section shell">
+  <div class="glass form-panel">
+    <h2 style="margin-bottom:6px;">Submit a Flag</h2>
+    <p style="margin-bottom:24px;">Just the flag — no writeup needed here. Correct flags score 2 points instantly. Submit your writeup separately, any time, from the <a href="submit-writeup.html" style="color:var(--signal);">Submit Writeup</a> page.</p>
+
+    <form id="flag-form">
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" required placeholder="Your full name" />
+      </div>
+
+      <div class="field">
+        <label for="discordUsername">Discord Username</label>
+        <input type="text" id="discordUsername" required placeholder="e.g. thrwt" />
+        <div class="hint">Use the exact same username every time — this is how we track your solves.</div>
+      </div>
+
+      <div class="field">
+        <label for="challengeId">Challenge</label>
+        <select id="challengeId" required>
+          <option value="">Loading challenges…</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="flag">Flag</label>
+        <input type="text" id="flag" required placeholder="DFIR{...}" class="mono" />
+      </div>
+
+      <button type="submit" class="btn btn-primary" id="submit-btn" style="width:100%; justify-content:center;">
+        Submit Flag
+      </button>
+
+      <div class="result-banner" id="result"></div>
+    </form>
+  </div>
+</section>
+
+<div data-partial="footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/partials.js"></script>
+<script src="js/main.js"></script>
+<script src="js/submit-flag.js"></script>
+</body>
+</html>

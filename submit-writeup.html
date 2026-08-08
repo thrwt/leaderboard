@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Submit Writeup — DFIR</title>
+<link rel="icon" href="assets/logo.svg" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div data-partial="nav"></div>
+
+<section class="section shell">
+  <div class="glass form-panel">
+    <h2 style="margin-bottom:6px;">Submit a Writeup</h2>
+    <p style="margin-bottom:24px;">You must have already solved the challenge (submitted the correct flag) before attaching a writeup to it. Reviewed separately for 0–2 extra points.</p>
+
+    <form id="writeup-form">
+      <div class="field">
+        <label for="discordUsername">Discord Username</label>
+        <input type="text" id="discordUsername" required placeholder="Same one you used to submit the flag" />
+      </div>
+
+      <div class="field">
+        <label for="challengeId">Challenge</label>
+        <select id="challengeId" required>
+          <option value="">Loading challenges…</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="writeupUrl">Writeup URL</label>
+        <input type="url" id="writeupUrl" required placeholder="https://..." />
+      </div>
+
+      <div class="field">
+        <label for="notes">Notes (optional)</label>
+        <textarea id="notes" placeholder="Anything the reviewer should know"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary" id="submit-btn" style="width:100%; justify-content:center;">
+        Submit Writeup
+      </button>
+
+      <div class="result-banner" id="result"></div>
+    </form>
+  </div>
+</section>
+
+<div data-partial="footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/partials.js"></script>
+<script src="js/main.js"></script>
+<script src="js/submit-writeup.js"></script>
+</body>
+</html>

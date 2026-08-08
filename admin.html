@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin — DFIR</title>
+<link rel="icon" href="assets/logo.svg" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div data-partial="nav"></div>
+
+<!-- Login view -->
+<section class="section shell" id="login-view">
+  <div class="glass login-panel">
+    <h2 style="margin-bottom:6px;">Admin Login</h2>
+    <p style="margin-bottom:24px;">Review writeups and manage the pending queue.</p>
+    <form id="login-form">
+      <div class="field">
+        <label for="username">Username</label>
+        <input type="text" id="username" required />
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" required />
+      </div>
+      <button type="submit" class="btn btn-primary" id="login-btn" style="width:100%; justify-content:center;">
+        Log In
+      </button>
+      <div class="result-banner" id="login-result"></div>
+    </form>
+  </div>
+</section>
+
+<!-- Dashboard view -->
+<section class="section shell" id="dash-view" style="display:none;">
+  <div class="section-head">
+    <h2>Pending Writeup Reviews</h2>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <span class="count" id="queue-count">loading…</span>
+      <button class="btn btn-ghost btn-sm" id="logout-btn">Log out</button>
+    </div>
+  </div>
+  <p style="margin-top:-10px; margin-bottom:20px;">Flags are auto-scored the moment they're correct — this queue is only for reviewing writeups.</p>
+  <div id="queue-list"></div>
+</section>
+
+<div data-partial="footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/partials.js"></script>
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
